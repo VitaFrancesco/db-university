@@ -72,8 +72,17 @@ VALUES ('4', 'Francesco', 'Vita', '2004-06-21', 'AUGUYZ94P14C703K', '2024-12-18'
 
 ### Cambiare il numero dell’ufficio del professor Pietro Rizzo in 126
 
+without safe update
 ```SQL
-
+UPDATE `teachers`
+SET `office_number` = '126'
+WHERE (`name` = 'pietro' AND `surname` = 'rizzo');
+```
+with safe update
+```SQL
+UPDATE `teachers`
+SET `office_number` = '126'
+WHERE `id` = '58';
 ```
 
 ### Eliminare dalla tabella studenti il record creato precedentemente al punto 9
