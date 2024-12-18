@@ -90,10 +90,12 @@ WHERE `id` = '58';
 
 without safe update
 ```SQL
-DELETE FROM `students` WHERE `name` = 'Francesco' AND `surname` = 'Vita';
+DELETE FROM `students`
+WHERE `name` = 'Francesco' AND `surname` = 'Vita';
 ```
 
 with safe update
 ```SQL
-DELETE FROM `students` WHERE `id` = '5001';
+DELETE FROM `students`
+WHERE `id` = '5001';
 ```
