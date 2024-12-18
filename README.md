@@ -78,6 +78,7 @@ UPDATE `teachers`
 SET `office_number` = '126'
 WHERE (`name` = 'pietro' AND `surname` = 'rizzo');
 ```
+
 with safe update
 ```SQL
 UPDATE `teachers`
@@ -87,6 +88,12 @@ WHERE `id` = '58';
 
 ### Eliminare dalla tabella studenti il record creato precedentemente al punto 9
 
+without safe update
 ```SQL
+DELETE FROM `students` WHERE `name` = 'Francesco' AND `surname` = 'Vita';
+```
 
+with safe update
+```SQL
+DELETE FROM `students` WHERE `id` = '5001';
 ```
