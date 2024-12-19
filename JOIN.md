@@ -60,3 +60,16 @@ ON `departments`.`id` = `degrees`.`department_id`
 JOIN `students`
 ON `degrees`.`id` = `students`.`degree_id`;
 ```
+
+### Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+
+```SQL
+SELECT `degrees`.`name` AS 'Corso di laurea', `courses`.`name` AS 'Corso', CONCAT(`teachers`.`name`,' ',`teachers`.`surname`) AS 'Insegnante'
+FROM `degrees`
+JOIN `courses`
+ON `degrees`.`id` = `courses`.`degree_id`
+JOIN `course_teacher`
+ON `courses`.`id` = `course_teacher`.`course_id`
+JOIN `teachers`
+ON `teachers`.`id` = `course_teacher`.`teacher_id`;
+```
