@@ -12,5 +12,13 @@ ORDER BY `year` ASC;
 ```SQL
 SELECT `office_address`, COUNT(*) AS 'n_teachers'
 FROM `teachers`
-GROUP BY `office_address`
+GROUP BY `office_address`;
+```
+
+### Calcolare la media dei voti di ogni appello d'esame
+
+```SQL
+SELECT `exam_id`, AVG(`vote`) AS 'avg_votes'
+FROM `exam_student`
+GROUP BY `exam_id`;
 ```
